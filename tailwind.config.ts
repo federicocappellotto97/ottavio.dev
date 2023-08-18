@@ -1,20 +1,42 @@
-import type { Config } from 'tailwindcss'
+const defaultTheme = require("tailwindcss/defaultTheme");
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: "#ffae00",
+        secondary: "#00FFFF",
+        logo: {
+          gradients: {
+            primary: {
+              from: "#C471F5",
+              to: "#FA70CD",
+            },
+            secondary: {
+              from: "#FDB051",
+              via: "#F2203E",
+              to: "#5342D6",
+            },
+            tertiary: {
+              DEFAULT: "#383C93",
+            },
+          },
+          secondary: "#ffae00",
+          tertiary: "#00FFFF",
+        },
+      },
+      fontFamily: {
+        sans: ["Work Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;

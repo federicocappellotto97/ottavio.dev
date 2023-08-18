@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
 const buttonVariants = cva(
-  "inline-block rounded-full border-[1.5px] border-black bg-gradient-to-t px-8 py-4 leading-none tracking-widest transition-all duration-200 ease-out group-enabled:group-hover:-translate-x-2 group-enabled:group-hover:-translate-y-2 group-disabled:opacity-50",
+  "inline-block rounded-full border-[1.5px] border-black bg-gradient-to-t px-8 py-4 leading-none tracking-widest transition-transform duration-200 ease-out group-enabled:group-hover:-translate-x-2 group-enabled:group-hover:-translate-y-2 group-disabled:cursor-not-allowed group-disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -22,7 +22,7 @@ const buttonVariants = cva(
 export const button = (variants: any) => twMerge(buttonVariants(variants));
 
 const buttonChildOneVariants = cva(
-  "absolute left-0 top-0 -z-10 h-full w-full rounded-full border-[1.5px] border-black bg-logo-secondary transition-all duration-200 ease-out group-enabled:group-hover:-translate-x-1 group-enabled:group-hover:-translate-y-1",
+  "absolute left-0 top-0 -z-10 h-full w-full rounded-full border-[1.5px] border-black bg-logo-secondary transition-transform duration-200 ease-out group-enabled:group-hover:-translate-x-1 group-enabled:group-hover:-translate-y-1",
 );
 
 export const buttonChildOne = () => twMerge(buttonChildOneVariants());
